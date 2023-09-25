@@ -1,4 +1,4 @@
-version: "3"
+version:#"3"
 services:
   solid-server:
     build: .
@@ -8,3 +8,4 @@ services:
     entrypoint: npm run solid start -- --no-reject-unauthorized
     environment:
       - NODE_TLS_REJECT_UNAUTHORIZED=0
+ 
