@@ -1,6 +1,6 @@
 FROM node:lts
 
-# build
+! build
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
@@ -8,7 +8,7 @@ COPY package-lock.json /usr/src/app/
 RUN npm install
 COPY . /usr/src/app
 
-# start
+  start
 EXPOSE 8443
 COPY config.json-default config.json
 RUN openssl req \
@@ -21,3 +21,4 @@ RUN openssl req \
     -keyout privkey.pem \
     -out fullchain.pem
 CMD npm run solid start
+ 
